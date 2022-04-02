@@ -1,9 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+
 #include "Matriz.h"
 
-void CriarMatriz(int matriz[nr_ordem][nr_ordem], int nr_ordem){
+void CriarMatriz(const int nr_ordem, int matriz[nr_ordem][nr_ordem]){
 
     srand(time(NULL));
     for(int i=0; i < nr_ordem; i++){
@@ -13,7 +11,7 @@ void CriarMatriz(int matriz[nr_ordem][nr_ordem], int nr_ordem){
     }
 }
 
-void ImprimeMatriz(int matriz[nr_ordem][nr_ordem], int nr_ordem){
+void ImprimeMatriz(const int nr_ordem, int matriz[nr_ordem][nr_ordem]){
 
     printf("\nA matriz gerada foi: \n");
     for (int i = 0; i < nr_ordem; i++){

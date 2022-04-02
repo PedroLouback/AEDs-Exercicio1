@@ -1,10 +1,8 @@
-#ifndef MATRIZ_H
-#define MATRIZ_H
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <stdbool.h>
 #define TAM 100
 
-typedef int Matriz[TAM][TAM];
-
-void CriarMatriz(Matriz, int);
-void ImprimeMatriz(Matriz, int);
-
-#endif
+void CriarMatriz(const int nr_ordem, int matriz[nr_ordem][nr_ordem]);
+void ImprimeMatriz(const int nr_ordem, int matriz[nr_ordem][nr_ordem]);

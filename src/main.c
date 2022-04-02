@@ -10,7 +10,7 @@ int main(){
     printf("Informe o tamanho da matriz quadrada: ");
     scanf("%d", &nr_ordem);
 
-    CriarMatriz(matriz, nr_ordem);
-    ImprimeMatriz(matriz, nr_ordem); 
+    CriarMatriz(nr_ordem, matriz);
+    ImprimeMatriz(nr_ordem, matriz); 
 
 }
