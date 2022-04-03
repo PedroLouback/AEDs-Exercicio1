@@ -1,7 +1,8 @@
 
 #include "Matriz.h"
 
-void CriarMatriz(const int nr_ordem, int matriz[nr_ordem][nr_ordem]){
+void MatrixMake(const int nr_ordem, int **matriz)
+{
 
     srand(time(NULL));
     for(int i=0; i < nr_ordem; i++){
@@ -11,7 +12,8 @@ void CriarMatriz(const int nr_ordem, int matriz[nr_ordem][nr_ordem]){
     }
 }
 
-void ImprimeMatriz(const int nr_ordem, int matriz[nr_ordem][nr_ordem]){
+void MatrixPrint(const int nr_ordem, int **matriz)
+{
 
     printf("\nA matriz gerada foi: \n");
     for (int i = 0; i < nr_ordem; i++){
@@ -23,7 +25,7 @@ void ImprimeMatriz(const int nr_ordem, int matriz[nr_ordem][nr_ordem]){
         }
 }
 
-void PercorrerMatriz(const int nr_ordem, int matriz[nr_ordem][nr_ordem])
+void MatrixWalk(const int nr_ordem, int **matriz)
 {
 
     int i=0, j=0, soma_dos_valores=0;
@@ -32,6 +34,18 @@ void PercorrerMatriz(const int nr_ordem, int matriz[nr_ordem][nr_ordem])
     matriz[i][j]=invalida_celula;
 
     while(i != nr_ordem && j != nr_ordem){
+        if(i==0 && j==0){ //caso esteja no inicio
+            if(matriz[i][j+1] >= matriz[i+1][j]){
+                soma_dos_valores+=matriz[i][j+1];
+                matriz[i][j+1]=invalida_celula;
+                j++;
+            }
+            else{
+                soma_dos_valores+=matriz[i+1][j];
+                matriz[i+1][j]=invalida_celula;
+                i++;
+            }
+        }
         if(i < nr_ordem-1 && j == 0){ //borda lateral esquerda
             if(matriz[i][j+1]>matriz[i+1][j] && matriz[i][j+1]!=invalida_celula){
                 soma_dos_valores+=matriz[i][j+1];
