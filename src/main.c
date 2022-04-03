@@ -16,9 +16,9 @@ int main(){
         matriz[i] = (int *)malloc(sizeof(int) * nr_ordem);
     }
 
-    MatrixMake(nr_ordem, matriz);
-    MatrixPrint(nr_ordem, matriz);
-    MatrixWalk(nr_ordem, matriz);
+    CriacaoMatriz(nr_ordem, matriz);
+    ImprimirMatriz(nr_ordem, matriz);
+    PercorrendoMatriz(nr_ordem, matriz);
 
     return 0;
 }
