@@ -6,3 +6,4 @@
 
 void CriarMatriz(const int nr_ordem, int matriz[nr_ordem][nr_ordem]);
 void ImprimeMatriz(const int nr_ordem, int matriz[nr_ordem][nr_ordem]);
+void PercorrerMatriz(const int nr_ordem, int matriz[nr_ordem][nr_ordem]);
