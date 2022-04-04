@@ -33,28 +33,29 @@ void PercorrendoMatriz(int nr_ordem, int **matriz)
     soma_dos_valores+=matriz[i][j];
     matriz[i][j]=invalida_celula;
 
-    while(i != nr_ordem && j != nr_ordem){
+    while(i < nr_ordem && j < nr_ordem){
         if(i < nr_ordem-1 && j == 0){ //borda lateral esquerda
-            if(matriz[i][j+1]>matriz[i+1][j] && matriz[i][j+1]!=invalida_celula){
+            if(matriz[i][j+1]>=matriz[i+1][j] && matriz[i][j+1]!=invalida_celula){
                 soma_dos_valores+=matriz[i][j+1];
                 matriz[i][j+1]=invalida_celula;
                 j++;
             }
-            else{
+            else if(matriz[i+1][j]>=matriz[i][j+1] && matriz[i+1][j]!=invalida_celula){
                 soma_dos_valores+=matriz[i+1][j];
                 matriz[i+1][j]=invalida_celula;
                 i++;
             }
         }
         else if(i==0 && j<nr_ordem-1){ //borda superior 
-            if(matriz[i][j+1]>matriz[i+1][j] && matriz[i][j+1]!=invalida_celula){
+            if(matriz[i][j+1]>=matriz[i+1][j] && matriz[i][j+1]!=invalida_celula){
                 soma_dos_valores+=matriz[i][j+1];
                 matriz[i][j+1]=invalida_celula;
                 j++;
             }
-            else{
-                soma_dos_valores += matriz[i+1][j];
-                matriz[i+1][j] = invalida_celula;
+            else if(matriz[i + 1][j] >= matriz[i][j + 1] && matriz[i + 1][j] != invalida_celula)
+            {
+                soma_dos_valores += matriz[i + 1][j];
+                matriz[i + 1][j] = invalida_celula;
                 i++;
             }
         }
@@ -64,31 +65,31 @@ void PercorrendoMatriz(int nr_ordem, int **matriz)
             i++;
         }
         else if(i<nr_ordem-1 && j==nr_ordem-1){ //borda lateral direita (sem ponta)
-            if(matriz[i][j-1]>matriz[i+1][j]&&matriz[i][j-1]!=invalida_celula){
+            if(matriz[i][j-1]>=matriz[i+1][j]&&matriz[i][j-1]!=invalida_celula){
                 soma_dos_valores+=matriz[i][j-1];
                 matriz[i][j-1]=invalida_celula;
                 j--;
             }
-            else if (matriz[i+1][j] > matriz[i][j-1] && matriz[i+1][j] != invalida_celula){
+            else if (matriz[i+1][j] >= matriz[i][j-1] && matriz[i+1][j] != invalida_celula){
                 soma_dos_valores += matriz[i + 1][j];
                 matriz[i + 1][j] = invalida_celula;
                 i++;
             }
         }
         else if(i!=nr_ordem-1 && j!=nr_ordem-1){ //elementos que não estão na borda
-            if (matriz[i][j + 1] > matriz[i + 1][j] && matriz[i][j + 1] != invalida_celula)
+            if (matriz[i][j + 1] > matriz[i + 1][j] && matriz[i][j + 1] > matriz[i][j - 1] && matriz[i][j + 1] != invalida_celula)
             {
                 soma_dos_valores += matriz[i][j + 1];
                 matriz[i][j + 1] = invalida_celula;
                 j++;
             }
-            else if (matriz[i + 1][j] > matriz[i][j - 1] && matriz[i + 1][j] != invalida_celula)
+            else if (matriz[i + 1][j] > matriz[i][j - 1] && matriz[i + 1][j] > matriz[i][j + 1] && matriz[i + 1][j] != invalida_celula)
             {
                 soma_dos_valores += matriz[i + 1][j];
                 matriz[i + 1][j] = invalida_celula;
                 i++;
             }
-            else if (matriz[i][j - 1] > matriz[i + 1][j] && matriz[i][j - 1] != invalida_celula)
+            else if (matriz[i][j - 1] > matriz[i + 1][j] && matriz[i][j - 1] > matriz[i][j+1] && matriz[i][j - 1] != invalida_celula)
             {
                 soma_dos_valores += matriz[i][j - 1];
                 matriz[i][j - 1] = invalida_celula;
@@ -100,9 +101,9 @@ void PercorrendoMatriz(int nr_ordem, int **matriz)
             matriz[i][j + 1] = invalida_celula;
             j++;
         }
-        else if(i==nr_ordem-1 && j<nr_ordem-1){
+        else if(i==nr_ordem-1 && j==nr_ordem-1){
             j++;
         }   
     }
-    printf("\nA soma dos valores é: %d", soma_dos_valores);
+    printf("\n\nA soma dos valores percorridos é: %d\n", soma_dos_valores);
 }
