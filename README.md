@@ -5,7 +5,7 @@
 ![ISO](https://img.shields.io/badge/ISO-Linux-blueviolet)
 
 
-===========
+---
 
 ## Apresentação
 
