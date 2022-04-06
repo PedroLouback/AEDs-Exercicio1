@@ -32,6 +32,7 @@ Ao tentar pensar em diversas formas de resolver o problema proposto de forma em 
 ## Representação gráfica
 
 Segue a representação gráfica de um exemplo de uma matriz 5x5 dada pela execução do programa e a soma dos valores percorridos:
+
 <div align="center">
 <img src="https://imgur.com/9brGxhw.png" width="1400px" />
 </div>
@@ -41,9 +42,29 @@ Segue a representação gráfica de um exemplo de uma matriz 5x5 dada pela execu
 
 ---
 
+## Perguntas
+
+### 1) - Há mais de uma maneira de resolver esse problema?
+
+Existe diversas formas para resolver sendo elas tendo um custo computacional maior ou menor como por exemplo existe pode existir uma maneira onde seria tratado elemento por elemento solucionando então todas problemas apresentados como por exemplo para não exceder a matriz na bordas e um tratamento diferenciado nas pontas. Outra maneira de resolver esse problema que provavelmente haverá um custo menor resumiria em ordenar todos os elementos em ordem crescente em uma forma de L ordenando até o final obtendo assim os maiores valores e fazendo um pequeno caminho.
+
+Ex: <div align="center">
+<img src="https://imgur.com/iUXHFkY.png" width="400px" />
+</div>
+
+### 2) - Há algoritmos em literatura que resolvam esse problema?
+
+Existe na literatura o algoritmo de Dijkstra em que ele trata de problemas com custo minimo do caminho.
+
+### 3) - Pode existir mais de um caminho cujo valor total é o maximo?
+
+Pode sim, foi pensando em uma maneira em que ordene os vetores em ordem crescente na primeira linha, na segunda, continuando do ultimo da primeira linha, seja ordenada em ordem crescente novamente e na terceira segue o mesmo raciocionio até chegar no final, obtendo assim um trilha com os maiores valores sendo percorridos em seguida, pegando todos os valores.
+
+---
+
 ## Compilação e Execução
 
-O  disponibilizada possui um arquivo Makefile que realiza todo o procedimento de compilação e execução. Para tanto, temos as seguintes diretrizes de execução:
+O programa feito de acordo com a proposta possui um arquivo Makefile que realiza todo o procedimento de compilação e execução. Para tanto, temos as seguintes diretrizes de execução:
 
 
 | Comando                |  Função                                                                                           |                     
