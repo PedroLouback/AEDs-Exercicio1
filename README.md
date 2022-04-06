@@ -34,7 +34,7 @@ Ao tentar pensar em diversas formas de resolver o problema proposto de forma em 
 Segue a representação gráfica de um exemplo de uma matriz 5x5 dada pela execução do programa e a soma dos valores percorridos:
 
 <div align="center">
-<img src="https://imgur.com/9brGxhw.png" width="1400px" />
+<img src="https://imgur.com/9brGxhw.png" width="1500px" />
 </div>
 
                                      Total do caminho percorrido feito pela soma dos valores: 
