@@ -43,7 +43,7 @@ Segue a representação gráfica de um exemplo de uma matriz 5x5 dada pela execu
 
 ## Compilação e Execução
 
-O  disponibilizada possui um arquivo Makefile que realiza todo o procedimento de compilação e execução. Para tanto, temos as seguintes diretrizes de execução:
+O programa feito de acordo com a proposta possui um arquivo Makefile que realiza todo o procedimento de compilação e execução. Para tanto, temos as seguintes diretrizes de execução:
 
 
 | Comando                |  Função                                                                                           |                     
