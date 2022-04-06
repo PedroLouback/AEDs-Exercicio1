@@ -25,7 +25,33 @@ Esta pequena revisão trabalhada é chamada de algoritmos gulosos, onde se camin
 
 ## Lógica
 
-Ao tentar pensar em diversas formas de resolver o problema proposto de forma em que há uma boa estruturação de código e um bom custo computacional, foi então pensado na forma de tratar caso por caso como por exemplo começar tratar as bordas onde cada uma tinha uma particularidade diferente em seu modo de se locomover, após isso foi pensado em tratar a ultima linha como uma atenção maior no último elemento sendo seu final e também procurei tratar aqueles elementos que não estavam inclusos em nenhuma ocasião mencionado, sendo os elementos do "meio" onde podem se locomover tanto para os lados quanto para baixo. Foi criada uma função chamada `PercorrendoMatriz` onde primeiramente nela declarei uma variavel _bool_ que recebia o valor _false_ e já comecei tratando o primeiro elemento, armazenando o valor da sua celula na variavel *soma_dos_valores* para mais tarde essa variavel ir somando os valores percorridos, após isso, invalidei a primeira celula para meu programa não retorna-lá e criar um loop infinito caso seja um valor maior. Tratei as outras especifidades com `IFs` onde verificava se o proximo valor, seja ele pra baixo ou para os lados, é maior que os demais valores que é permitido percorrer e também se a celula não estava invalidada e ao acionar esse `IF` é realizada um total de 3 operações onde na primeira é feita a soma do próximo valor da posição passada pelo `IF`, já a segunda já invalidava a celula que foi encotrado o maior valor e na terceira operação é feita a locomoção dessa celula caso for para a direita sera **j++**, caso for para a esquerda sera **j--** e se for para baixo será **i++**. Um caso especifico foi tratado onde verificava com um `IF` se a posição sera a ultima e se caso a verificação for verdadeira será apenas locomida a celula para a direita não havendo soma de valor nenhum pois a soma do valor dessa celula foi feita na verificação anterior pois tratei a as ações sempre nas celulas posteriores e no caso da ultima isso não poderia ocorrer, sendo ela a única verificação diferente para não exceder a matriz. Ao final dessa função é imprimido a soma de todos os valores que foram percorridos durante a matriz, apresentando então a proposta do     
+Ao tentar pensar em diversas formas de resolver o problema proposto de forma em que há uma boa estruturação de código e um bom custo computacional, foi então pensado na forma de tratar caso por caso como por exemplo começar tratar as bordas onde cada uma tinha uma particularidade diferente em seu modo de se locomover, após isso foi pensado em tratar a ultima linha como uma atenção maior no último elemento sendo seu final e também procurei tratar aqueles elementos que não estavam inclusos em nenhuma ocasião mencionado, sendo os elementos do "meio" onde podem se locomover tanto para os lados quanto para baixo. Foi criada uma função chamada `PercorrendoMatriz` onde primeiramente nela declarei uma variavel _bool_ que recebia o valor _false_ e já comecei tratando o primeiro elemento, armazenando o valor da sua celula na variavel *soma_dos_valores* para mais tarde essa variavel ir somando os valores percorridos, após isso, invalidei a primeira celula para meu programa não retorna-lá e criar um loop infinito caso seja um valor maior. Tratei as outras especifidades com `IFs` onde verificava se o proximo valor, seja ele pra baixo ou para os lados, é maior que os demais valores que é permitido percorrer e também se a celula não estava invalidada e ao acionar esse `IF` é realizada um total de 3 operações onde na primeira é feita a soma do próximo valor da posição passada pelo `IF`, já a segunda já invalidava a celula que foi encotrado o maior valor e na terceira operação é feita a locomoção dessa celula caso for para a direita sera **j++**, caso for para a esquerda sera **j--** e se for para baixo será **i++**. Um caso especifico foi tratado onde verificava com um `IF` se a posição sera a ultima e se caso a verificação for verdadeira será apenas locomovida a celula para a direita não havendo soma de valor nenhum pois a soma do valor dessa celula foi feita na verificação anterior pois tratei a as ações sempre nas celulas posteriores e no caso da ultima isso não poderia ocorrer, sendo ela a única verificação diferente para não exceder a matriz. Ao final dessa função é imprimido a soma de todos os valores que foram percorridos durante a matriz, resolvendo então a proposta do problema.  
+
+---
+
+## Representação gráfica
+
+Segue a representação gráfica de um exemplo de uma matriz 5x5 dada pela execução do programa e a soma dos valores percorridos:
+<div align="center">
+<img src="https://imgur.com/9brGxhw.png" width="1400px" />
+</div>
+
+                                     Total do caminho percorrido feito pela soma dos valores: 
+                                    73 + 63 + 38 + 37 + 19 + 42 + 96 + 26 + 52 + 90 + 89 = 625 
+
+---
+
+## Compilação e Execução
+
+O  disponibilizada possui um arquivo Makefile que realiza todo o procedimento de compilação e execução. Para tanto, temos as seguintes diretrizes de execução:
+
+
+| Comando                |  Função                                                                                           |                     
+| -----------------------| ------------------------------------------------------------------------------------------------- |
+|  `make clean`          | Apaga a última compilação realizada contida na pasta build                                        |
+|  `make`                | Executa a compilação do programa utilizando o gcc, e o resultado vai para a pasta build           |
+|  `make run`            | Executa o programa da pasta build após a realização da compilação             
+
 
 ---
 
@@ -34,4 +60,3 @@ Ao tentar pensar em diversas formas de resolver o problema proposto de forma em 
 Criado por [Pedro Henrique Louback Campos](https://www.linkedin.com/in/pedro-henrique-louback-campos-0a4a03205/)
 
 Aluno do 3° periodo do curso de `Engenharia da Computação` no [CEFET-MG](https://www.cefetmg.br)
-
