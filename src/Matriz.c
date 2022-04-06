@@ -83,13 +83,13 @@ void PercorrendoMatriz(int nr_ordem, int **matriz)
                 matriz[i][j + 1] = invalida_celula;
                 j++;
             }
-            else if (matriz[i + 1][j] > matriz[i][j - 1] && matriz[i + 1][j] > matriz[i][j + 1] && matriz[i + 1][j] != invalida_celula)
+            else if (matriz[i + 1][j] >= matriz[i][j - 1] && matriz[i + 1][j] > matriz[i][j + 1] && matriz[i + 1][j] != invalida_celula)
             {
                 soma_dos_valores += matriz[i + 1][j];
                 matriz[i + 1][j] = invalida_celula;
                 i++;
             }
-            else if (matriz[i][j - 1] > matriz[i + 1][j] && matriz[i][j - 1] > matriz[i][j+1] && matriz[i][j - 1] != invalida_celula)
+            else if (matriz[i][j - 1] >= matriz[i + 1][j] && matriz[i][j - 1] > matriz[i][j+1] && matriz[i][j - 1] != invalida_celula)
             {
                 soma_dos_valores += matriz[i][j - 1];
                 matriz[i][j - 1] = invalida_celula;
